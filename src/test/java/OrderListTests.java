@@ -2,10 +2,11 @@ import io.qameta.allure.Description;
 import io.qameta.allure.junit4.DisplayName;
 import org.junit.After;
 import org.junit.Test;
+
 import static data.TestData.*;
 import static org.hamcrest.Matchers.notNullValue;
 
-public class OrderListTests  extends BaseTest{
+public class OrderListTests extends BaseTest{
     Courier courier = new Courier(LOGIN, PASSWORD, FIRST_NAME);
     Order order1 = new Order(ORDER_FIRST_NAME, ORDER_LAST_NAME, ADDRESS, METRO_STATION, PHONE, RENT_TIME, DELIVERY_DATE, COMMENT);
 

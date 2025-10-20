@@ -11,7 +11,7 @@ import static data.TestData.*;
 import static org.hamcrest.Matchers.notNullValue;
 
 @RunWith(Parameterized.class)
-public class OrderCreationTests  extends BaseTest{
+public class OrderCreationTests extends BaseTest{
 
     Order order = new Order(ORDER_FIRST_NAME, ORDER_LAST_NAME, ADDRESS, METRO_STATION, PHONE, RENT_TIME, DELIVERY_DATE, COMMENT);
     private final String[] color;

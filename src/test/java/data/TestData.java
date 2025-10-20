@@ -2,9 +2,6 @@ package data;
 
 import com.github.javafaker.Faker;
 
-import static constants.Colors.BLACK;
-import static constants.Colors.GREY;
-
 public class TestData {
     public final static String BASE_URL = "https://qa-scooter.praktikum-services.ru";
 

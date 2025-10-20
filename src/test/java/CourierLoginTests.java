@@ -3,11 +3,12 @@ import io.qameta.allure.junit4.DisplayName;
 import org.hamcrest.MatcherAssert;
 import org.junit.After;
 import org.junit.Test;
+
 import static data.TestData.*;
 import static org.hamcrest.Matchers.equalTo;
 import static org.hamcrest.Matchers.notNullValue;
 
-public class CourierLoginTests  extends BaseTest{
+public class CourierLoginTests extends BaseTest{
     Courier courier = new Courier(LOGIN, PASSWORD, FIRST_NAME);
 
     @After
