@@ -8,25 +8,26 @@ import static org.hamcrest.Matchers.notNullValue;
 
 public class OrderListTests extends BaseTest{
     Courier courier = new Courier(LOGIN, PASSWORD, FIRST_NAME);
-    Order order1 = new Order(ORDER_FIRST_NAME, ORDER_LAST_NAME, ADDRESS, METRO_STATION, PHONE, RENT_TIME, DELIVERY_DATE, COMMENT);
+    Order order = new Order(ORDER_FIRST_NAME, ORDER_LAST_NAME, ADDRESS, METRO_STATION, PHONE, RENT_TIME, DELIVERY_DATE, COMMENT);
+    OrderRequests orderObject = new OrderRequests(order);
+    CourierRequests courierObject = new CourierRequests(courier);
 
     @After
     public void ShutDown() {
-        courier.courierDelete(courier.courierLogin(courier).jsonPath().getString("id"));
-        order1.deleteOrder(order1);
+        courierObject.courierDelete(courierObject.courierLogin(courier).jsonPath().getString("id"));
+        orderObject.deleteOrder(order);
     }
     @Test
     @DisplayName("Проверка тела ответа в запросе на получение списка заказов")
     @Description("Поле объектов *orders* не пустое")
     public void orderListTest() {
-        courier.courierCreate(courier);
-        courier.courierLogin(courier);
-        order1.createOrder(order1);
-        order1.getOrder(order1);
-        order1.acceptOrder(order1, courier);
-                order1.orderList(courier)
-               .then()
+        courierObject.courierCreate(courier);
+        courierObject.courierLogin(courier);
+        orderObject.createOrder(order);
+        orderObject.getOrder(order);
+        orderObject.acceptOrder(order, courier);
+        orderObject.orderList(courier)
+                .then()
                 .body("orders", notNullValue());
-
     }
 }
