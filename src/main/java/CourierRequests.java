@@ -5,7 +5,7 @@ import io.restassured.response.Response;
 import static constants.APIs.*;
 import static io.restassured.RestAssured.given;
 
-public class CourierRequests extends Courier{
+public class CourierRequests {
 
     public CourierRequests(Courier courier) {}
 

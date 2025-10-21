@@ -6,7 +6,7 @@ import org.json.JSONObject;
 import static constants.APIs.*;
 import static io.restassured.RestAssured.given;
 
-public class OrderRequests extends Order {
+public class OrderRequests {
 
     public OrderRequests(Order order) {}
 
