@@ -9,7 +9,7 @@ import static org.apache.http.HttpStatus.*;
 import static org.hamcrest.Matchers.equalTo;
 import static org.hamcrest.Matchers.notNullValue;
 
-public class CourierLoginTests {
+public class CourierLoginTests extends BaseTest{
     Courier courier = new Courier(LOGIN, PASSWORD, FIRST_NAME);
     CourierRequests courierObject = new CourierRequests(courier);
 
